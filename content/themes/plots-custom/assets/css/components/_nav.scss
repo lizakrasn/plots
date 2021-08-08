@@ -1,0 +1,27 @@
+.nav {
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    margin: 0;
+    margin-right: 20px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      .nav__link {
+        color: $orange;
+      }
+    }
+  }
+
+  &__link {
+    color: $sepia;
+    font-size: 20px;
+    transition: color 300ms;
+  }
+}

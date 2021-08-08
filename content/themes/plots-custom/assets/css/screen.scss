@@ -7,3 +7,9 @@ production stylesheet in assets/built/screen.css
 
 /* Import CSS reset and base styles */
 @import "global.scss";
+@import "./helpers/index.sass";
+@import "./base/index.scss";
+@import "_common.scss";
+@import "./components/index.scss";
+@import "./containers/index.scss";
+@import "./pages/index.scss";

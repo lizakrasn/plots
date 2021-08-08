@@ -1,0 +1,31 @@
+.highlight {
+  &_brown {
+    color: $chocolate;
+  }
+}
+
+.title {
+  padding-bottom: 50px;
+  display: flex;
+  align-items: center;
+
+  &__highlight {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+
+  &__text {
+    font-size: 30px;
+    text-transform: uppercase;
+  }
+
+  &_brown {
+    .title {
+      &__highlight {
+        background-color: $chocolate;
+      }
+    }
+  }
+}

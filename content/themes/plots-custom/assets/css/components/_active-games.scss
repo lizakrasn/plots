@@ -1,0 +1,17 @@
+.active-games {
+  padding: 50px;
+
+  &__posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__post {
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

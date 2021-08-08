@@ -1,0 +1,34 @@
+=setFont($alias, $name, $weight: 'normal', $style: 'normal')
+  @font-face
+    font-family: $alias
+    src: url("/fonts/" + $name + ".woff2") format("woff2")
+    src: url("/fonts/" + $name + ".ttf") format("ttf")
+    font-weight: $weight
+    font-style: $style
+    font-display: swap
+
++setFont('Amatic', 'Amatic-Regular', 400)
++setFont('Amatic', 'Amatic-Bold', 700)
++setFont('BasisGrotesquePro', 'BasisGrotesquePro-Regular', 400)
++setFont('BasisGrotesquePro', 'BasisGrotesquePro-Medium', 500)
++setFont('BasisGrotesquePro', 'BasisGrotesquePro-Bold', 700)
++setFont('Ambit', 'Ambit-Light', 300)
++setFont('Ambit', 'Ambit-Regular', 400)
++setFont('Ambit', 'Ambit-Bold', 600)
+
+=fbasis
+  font-family: 'BasisGrotesquePro', "Arial", sans-serif
+
+=fambit
+  font-family: 'Ambit', "Arial", sans-serif
+
+=famatic
+  font-family: 'Amatic', "Arial", sans-serif
+
+body
+  font-family: 'Amatic', "Arial", sans-serif
+  font-size: 24px
+  line-height: 120%
+  font-weight: 400
+  background-color: $pale-lemon
+  +smooth-font
