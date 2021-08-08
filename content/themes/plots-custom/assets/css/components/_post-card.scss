@@ -2,6 +2,7 @@
   position: relative;
   display: inline-block;
   cursor: pointer;
+  width: 100%;
 
   &:hover {
     .post-card {
@@ -19,11 +20,17 @@
     }
   }
 
+  &__content-link {
+    text-decoration: none;
+  }
+
   &__image-link {
     display: block;
     position: relative;
     width: 100%;
-    height: 100%;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
     overflow: hidden;
 
     &::after {
@@ -33,13 +40,16 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0px, rgba(84, 84, 84, 0) 50%);
+      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0px, rgba(84, 84, 84, 0) 70%);
     }
   }
 
   &__image {
-    width: 300px;
-    height: 300px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     transition: transform 300ms ease-out;
   }
@@ -52,7 +62,7 @@
   }
 
   &__title {
-    font-size: 20px;
+    font-size: 30px;
     line-height: 100%;
     padding-bottom: 5px;
     color: $grey;
@@ -62,9 +72,35 @@
   }
 
   &__exerpt {
-    font-size: 14px;
+    font-size: 24px;
     line-height: 100%;
     color: $sand;
     transition: color 300ms ease-out;
+  }
+
+  &_long {
+    .post-card {
+      &__image-link {
+        padding-bottom: 50%;
+
+        &::after {
+          background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0px, rgba(84, 84, 84, 0) 40%);
+        }
+      }
+
+      &__content {
+        width: 100%;
+      }
+
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      &__title {
+        padding-bottom: 0;
+      }
+    }
   }
 }

@@ -1,22 +1,8 @@
 .header {
   position: relative;
   color: $sepia;
-
-  &__bg-container {
-    width: 100%;
-    height: fit-content;
-    position: relative;
-    &::after {
-      content: "";
-      position: absolute;
-      color: red;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      // background-image: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0px, rgba(84, 84, 84, 0) 50%);
-    }
-  }
+  font-weight: 700;
+  letter-spacing: 1.5px;
 
   &__bg {
     width: 100%;
@@ -37,14 +23,14 @@
   }
 
   &__title {
-    font-size: 20px;
+    font-size: 26px;
     text-transform: uppercase;
     line-height: 120%;
   }
 
   &__subtitle {
     margin: 0 auto;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 120%;
   }
 }

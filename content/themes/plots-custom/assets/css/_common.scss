@@ -1,15 +1,21 @@
-.highlight {
-  &_brown {
-    color: $chocolate;
-  }
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.container-second {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 50px;
 }
 
 .title {
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   display: flex;
   align-items: center;
 
   &__highlight {
+    display: none;
     width: 20px;
     height: 20px;
     margin-right: 10px;
@@ -17,15 +23,10 @@
   }
 
   &__text {
+    padding: 5px;
+    font-family: 'Frederic', "Arial", sans-serif;
+    font-weight: 400;
     font-size: 30px;
     text-transform: uppercase;
-  }
-
-  &_brown {
-    .title {
-      &__highlight {
-        background-color: $chocolate;
-      }
-    }
   }
 }

@@ -1,0 +1,18 @@
+<section class="planned-games">
+  <div class="container">
+    <div class="title title_brown">
+      <div class="title__highlight"></div>
+      <h2 class="title__text">Planned games</h2> 
+    </div>
+    
+    <div class="planned-games__posts">
+      {{#get "posts" filter="tags:planned-game" }}
+      {{#foreach posts }}
+        <div class="planned-games__post">
+          {{> "post-card-long"}}
+        </div>
+      {{/foreach}}
+      {{/get}}
+    </div>
+  </div>
+</section>

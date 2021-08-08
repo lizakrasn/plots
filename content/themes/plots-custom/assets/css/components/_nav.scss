@@ -1,6 +1,7 @@
 .nav {
   &__list {
     display: flex;
+    list-style: none;
   }
 
   &__item {
@@ -21,7 +22,10 @@
 
   &__link {
     color: $sepia;
-    font-size: 20px;
+    font-size: 22px;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 1.5px;
     transition: color 300ms;
   }
 }
