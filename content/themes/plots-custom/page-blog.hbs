@@ -1,0 +1,34 @@
+{{!< default}}
+
+{{#post}}
+
+<article class="blog {{post_class}}">
+
+    <header class="blog__header">
+        {{#if feature_image}}
+        <figure class="blog__image-container">
+            <img
+                srcset="{{img_url feature_image size="s"}} 300w,
+                        {{img_url feature_image size="m"}} 600w,
+                        {{img_url feature_image size="l"}} 1000w,
+                        {{img_url feature_image size="xl"}} 2000w"
+                sizes="(min-width: 1400px) 1400px, 92vw"
+                src="{{img_url feature_image size="xl"}}"
+                alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                class="blog__image"
+            />
+        </figure>
+        {{/if}}
+    </header>
+
+    <section class="blog__content">
+
+        <h1 class="blog__title">{{title}}</h1>
+
+        {{content}}
+
+    </section>
+
+</article>
+
+{{/post}}

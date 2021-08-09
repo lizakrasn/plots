@@ -3,7 +3,16 @@
 into the {body} of the default.hbs template --}}
 
 {{!-- The main content area --}}
+
 <main id="site-main" class="main">
+  <div class="background">
+    <img
+      class="background__image"
+      src="../assets/images/over_the_garden_wall.jpg"
+      alt="Ilustration"
+    />
+  </div>
+
   {{> "sections/active"}}
   {{> "sections/planned"}}
   {{> "sections/paused"}}
