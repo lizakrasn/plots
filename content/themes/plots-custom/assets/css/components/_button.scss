@@ -1,0 +1,53 @@
+.button {
+  position: relative;
+  padding: 5px 15px;
+  background-color: lightgrey;
+  font-weight: bold;
+  color: $pale-lemon;
+  text-decoration: none;
+  color: $pale-lemon;
+  background: linear-gradient(to right, #6E4644, #112643);
+  border-radius: 2px;
+
+  transition: color 300ms ease-out;
+
+  &::before {
+    width: 100%;
+    height: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background: linear-gradient(to right, #6E4644, #E8C75E);
+    transition: opacity 300ms ease-out;
+  }
+
+  &:visited {
+    color: $pale-lemon;
+  }
+
+  &:hover {
+    color: $main-color;
+    &::before {
+      opacity: 1;
+    }
+
+    .button {
+      &__arrow {
+        transform: translateX(5px);
+      }
+    }
+  }
+
+  &__text {
+    position: relative;
+    display: inline-block;
+  }
+
+  &__arrow {
+    margin-left: 5px;
+    display: inline-block;
+    transition: transform 300ms ease-out;
+  }
+}

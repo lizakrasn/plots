@@ -103,4 +103,52 @@
       }
     }
   }
+
+  &_small {
+    .post-card {
+      &__title {
+        font-size: 22px;
+        letter-spacing: 1px;
+      }
+
+      &__exerpt {
+        font-size: 18px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  &_sepia {
+    .post-card {
+      &__image{
+        filter: sepia(1);
+        transition: transform 300ms ease-out filter 300ms ease-out;
+      }
+    }
+
+    &:hover {
+      .post-card {
+        &__image{
+          filter: sepia(0);
+        }
+      }
+    }
+  }
+
+  &_grey {
+    .post-card {
+      &__image{
+        filter: grayscale(1);
+        transition: transform 300ms ease-out filter 300ms ease-out;
+      }
+    }
+
+    &:hover {
+      .post-card {
+        &__image{
+          filter: grayscale(0);
+        }
+      }
+    }
+  }
 }

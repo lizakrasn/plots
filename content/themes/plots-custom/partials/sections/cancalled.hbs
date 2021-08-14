@@ -1,15 +1,12 @@
 <section class="cancalled-games">
   <div class="container">
-    <div class="title title_brown">
-      <div class="title__highlight"></div>
-      <h2 class="title__text">Cancalled games</h2> 
-    </div>
+    <h2 class="title">Cancalled games</h2>
     
-    <div class="active-games__posts">
+    <div class="cancalled-games__posts">
       {{#get "posts" filter="tags:active-game" }}
       {{#foreach posts }}
-        <div class="active-games__post">
-          {{> "post-card-large"}}
+        <div class="cancalled-games__post">
+          {{> "post-card" additionalClass="post-card_grey post-card_small"}}
         </div>
       {{/foreach}}
       {{/get}}

@@ -1,15 +1,13 @@
 <section class="paused-games">
   <div class="container">
-    <div class="title title_brown">
-      <div class="title__highlight"></div>
-      <h2 class="title__text">Paused games</h2> 
-    </div>
+    <h2 class="title">Paused games</h2>
     
     <div class="paused-games__posts">
       {{#get "posts" filter="tags:active-game" }}
       {{#foreach posts }}
-        <div class="paused-games__post">
-          {{> "post-card-large"}}
+
+        <div class="paused-games__post ">
+          {{> "post-card" additionalClass="post-card_sepia post-card_small"}}
         </div>
       {{/foreach}}
       {{/get}}

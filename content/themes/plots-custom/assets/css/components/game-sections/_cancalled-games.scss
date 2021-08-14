@@ -1,0 +1,20 @@
+.cancalled-games {
+  padding: 50px;
+
+  &__posts {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+  }
+
+  &__post {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

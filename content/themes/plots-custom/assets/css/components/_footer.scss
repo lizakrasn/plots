@@ -1,0 +1,38 @@
+.footer {
+  width: 100%;
+  padding-top: 50px;
+  letter-spacing: 1px;
+  font-weight: bold;
+
+  &__wave {
+    position: relative;
+    top: 1px;
+    line-height: 0;
+  }
+
+  &__container {
+    padding: 0 50px;
+    background-color: $milk-chocolate;
+  }
+
+  &__content {
+    padding: 20px 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__creator-img {
+    width: 70px;
+    height: 70px;
+    border: 5px solid $brown;
+    border-radius: 50%;
+    margin-left: 20px;
+  }
+}

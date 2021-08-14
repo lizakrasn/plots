@@ -1,0 +1,39 @@
+.article-card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  &__image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 2px;
+  }
+
+  &__header {
+    display: flex;
+  }
+
+  &__content {
+    padding: 20px;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    padding-bottom: 20px;
+    font-size: 36px;
+    font-weight: bold;
+  }
+
+
+}
