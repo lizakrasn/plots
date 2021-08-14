@@ -1,0 +1,228 @@
+.post-content
+  max-width: 1100px
+  margin: 0 auto
+  +r(875)
+    max-width: 472px
+  p 
+    font-family: "OpenSans", Arial, Helvetica, sans-serif
+    font-size: 20px
+    line-height: 1.8em
+    font-weight: 300
+    margin-bottom: 10px
+    color: $main-color
+    +r(1023)
+      font-size: 16px
+      letter-spacing: 0.02em
+    +r(515)
+      margin-bottom: 16px
+      line-height: 1.5em
+      letter-spacing: 0.01em
+
+  strong
+    font-weight: 700
+
+  a
+    // color: $blue
+    // box-shadow: inset 0 -2px 0 rgba($blue, 0.4)
+    padding-bottom: 8px
+    transition: box-shadow 0.3s ease-in-out
+    +r(767)
+      padding-bottom: 4px
+    +hover
+      // box-shadow: inset 0 -2px 0 $blue
+  hr
+    background-color: $main-color
+    border: none
+    height: 2px
+    margin: 56px 0 48px
+    +r(1023)
+      margin: 48px 0 36px
+    +r(515)
+      margin: 24px 0
+
+  blockquote
+    // +grotesk()
+    position: relative
+    font-size: 26px
+    line-height: 1.8em
+    // color: $black
+    width: 940px
+    padding-left: 25px
+    margin: 72px auto
+    left: 50%
+    transform: translateX(-50%)
+    font-feature-settings: 'liga' off
+    +r(1280)
+      width: 850px
+    +r(1199)
+      position: static
+      transform: translateX(0)
+      width: 100%
+    +r(1023)
+      position: relative
+      transform: translateX(-50%)
+      width: 820px
+      font-size: 24px
+      margin: 48px auto
+    +r(875)
+      width: 600px
+    +r(625)
+      position: static
+      transform: translateX(0)
+      width: 100%
+    +r(515)
+      margin: 24px auto
+    &::before
+      position: absolute
+      content: ""
+      background: url('../img/yellow-quote.svg') no-repeat center/cover
+      width: 110px
+      height: 90px
+      top: 0
+      left: 0
+      z-index: -1
+      +r(515)
+        width: 88px
+        height: 72px
+
+  h2,
+  h3
+    // color: $black
+    line-height: 1em
+    margin-top: 72px
+    
+    +r(1023)
+      margin: 48px 0 16px
+      line-height: 1.2em
+    +r(515)
+      margin-top: 36px
+
+  h2
+    // +bold()
+    font-size: 30px
+    margin-bottom: 36px
+
+  h3
+    // +semibold()
+    font-size: 24px
+    letter-spacing: 0.01em   
+    margin-bottom: 24px
+
+  ol,
+  ul
+    padding-left: 50px
+    margin: 24px 0
+    +r(1023)
+      padding-left: 0
+    +r(515)
+      margin: 16px 0
+    li
+      position: relative
+      padding-left: 61px
+      font-size: 20px
+      line-height: 1.8em
+      color: #282828
+      +r(1023)
+        font-size: 16px
+        letter-spacing: 0.02em
+        padding-left: 24px
+
+      &:not(:last-child)
+        margin-bottom: 24px
+        +r(515)
+          margin-bottom: 16px
+  ul
+    li::before
+      position: absolute
+      content: ""
+      background: url('../img/disc.png') no-repeat center/cover
+      width: 12px
+      height: 12px
+      top: 12px
+      left: 13px
+      +r(1023)
+        left: 0
+
+  ol
+    list-style-type: none
+    counter-reset: item
+    li
+      +r(1023)
+      padding-left: 36px
+      &::before
+        position: absolute
+        content: counter(item)
+        counter-increment: item
+        top: 2px
+        left: 0
+        background-image: url('../img/decimal.png')
+        background-repeat: no-repeat
+        background-position: center
+        background-size: cover
+        width: 32px
+        height: 32px
+
+        // +med()
+        font-size: 16px
+        line-height: 1em
+        color: #282828
+
+        display: flex
+        justify-content: center
+        align-items: center
+        +r(1023)
+          width: 24px
+          height: 24px
+          font-size: 14px
+
+  .kg-card
+    margin: 36px 0 48px 
+    iframe
+      width: 100%
+    +r(1023)
+      margin: 48px 0
+    +r(515)
+      margin: 24px 0
+
+    & > img
+      width: 100%
+      height: auto
+
+    figcaption
+      // +ital()
+      font-size: 16px
+      line-height: 1.5em
+      color: #767676
+      letter-spacing: 0.02em
+      text-align: center
+      +r(515)
+        font-size: 14px
+
+  .kg-gallery-container
+    position: relative
+    width: 940px
+    left: 50%
+    transform: translateX(-50%)
+    +r(1280)
+      width: 850px
+    +r(1199)
+      position: static
+      transform: translateX(0)
+      width: 100%
+    +r(1023)
+      position: relative
+      transform: translateX(-50%)
+      width: 820px
+    +r(875)
+      width: 600px
+    +r(625)
+      position: static
+      transform: translateX(0)
+      width: 100%
+
+
+h2.intro-element
+  margin: 0 
+  padding: 0 
+  line-height: 0 
+  font-size: 0 

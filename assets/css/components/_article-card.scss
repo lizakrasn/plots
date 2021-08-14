@@ -2,7 +2,8 @@
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
-  font-family: 'BasisGrotesquePro', "Arial", sans-serif;
+  font-family: "OpenSans", Arial, Helvetica, sans-serif;
+  font-weight: 300;
   font-size: 18px;
 
   &__image {
@@ -14,14 +15,13 @@
 
   &__title {
     font-size: 26px;
-    font-weight: bold;
+    font-weight: 700;
   }
 
   &__header {
     margin-bottom: 10px;
     display: flex;
     align-items: center;
-    // justify-content: space-between;
   }
 
   &__date {

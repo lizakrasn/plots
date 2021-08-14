@@ -2,29 +2,23 @@
 
 {{#post}}
 
-<article class="post {{post_class}}">
+<article class="article {{post_class}}">
 
-    <header class="post__header">
-        <div class="post__header-bg">
-            <img class="post__dragon" alt="Dragon" src="/assets/images/dragon.svg"/>
-            <div class="post__bg-wave">
-              <svg viewBox="0 0 1756 17" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M0 17H1756C1756 17 1756 -3.03023 1756 6.97913C1736.48 4.35991 1663.61 6.97974 1643.9 6.97974C1624.18 6.97974 1614.49 -4.77135e-05 1595 0C1568.76 6.42508e-05 1532.7 4.25453 1506.45 3.97633C1472.04 3.61169 1473.01 13.578 1439.29 6.97913C1428.48 4.86329 1414.79 12.9985 1403.75 12.9847C1387.77 12.9648 1348.11 5.12883 1332.16 5.97777C1294.53 7.97964 1298.97 17.3741 1261.6 16.9885C1224.32 16.6037 1221.52 2.84641 1184.25 3.97578C1103.97 6.40862 1100.88 5.28783 1021.2 14.9866C991.931 18.5488 919.546 11.8257 820.512 12.9847C746.186 13.8546 787.074 3.11608 712.852 6.97913C686.121 8.37043 583.243 16.9885 534.117 16.9885C497.167 16.9885 512.528 14.4058 475.583 14.9866C412.867 15.9726 324.312 10.6731 293.189 14.4862C271.527 17.1402 259.082 16.0047 237.269 14.9866C218.811 14.1251 198.709 3.47748 170.374 1.97416C142.724 0.507187 120.202 12.9847 101.388 12.9847C48.8959 12.9847 0 6.97913 0 6.97913V17Z"
-                  fill="#6E4644"></path>
-              </svg>
-            </div>
-          </div>
+    <header class="article-header gh-canvas">
 
-        {{!-- {{#if primary_tag}}
+        {{#if primary_tag}}
         <section class="article-tag">
             <a href="{{primary_tag.url}}">{{primary_tag.name}}</a>
         </section>
-        {{/if}} --}}
+        {{/if}}
 
-        <h1 class="post__title">{{title}}</h1>
+        <h1 class="article-title">{{title}}</h1>
 
-        {{!-- <div class="article-byline">
+        {{#if custom_excerpt}}
+        <p class="article-excerpt">{{custom_excerpt}}</p>
+        {{/if}}
+
+        <div class="article-byline">
             <section class="article-byline-content">
                 <ul class="author-list">
                     {{#foreach authors}}
@@ -47,7 +41,7 @@
                     </div>
                 </div>
             </section>
-        </div> --}}
+        </div>
 
         {{#if feature_image}}
         <figure class="article-image">
@@ -69,13 +63,47 @@
         {{/if}}
     </header>
 
-    <section class="post-content">
+    <section class="gh-content gh-canvas">
         {{content}}
     </section>
 
-    <a class="article-card__content-link button" href="/blog">
-        <span class="button__text">Back to posts</span>
-    </a>
-
 </article>
+
+{{!-- A signup call to action is displayed here, unless viewed as a logged-in member --}}
+{{#unless @member}}
+<section class="footer-cta">
+    <div class="inner">
+        <h2>Sign up for more like this.</h2>
+        <a class="footer-cta-button" href="#/portal">
+            <div>Enter your email</div>
+            <span>Subscribe</span>
+        </a>
+        {{!-- ^ This looks like a form element, but it's just a link to Portal,
+        making the form validation and submission much simpler. --}}
+    </div>
+</section>
+{{/unless}}
+
+
+{{!-- Read more links, just above the footer --}}
+<aside class="read-more-wrap">
+    <div class="read-more inner">
+
+        {{!-- The {#get} helper below fetches some of the latest posts here
+        so that people have something else to read when they finish this one.
+
+        This query gets the latest 3 posts on the site, but adds a filter to
+        exclude the post we're currently on from being included. --}}
+
+        {{#get "posts" filter="id:-{{id}}" include="authors" limit="3" as |more_posts|}}
+            {{#if more_posts}}
+                {{#foreach more_posts}}
+                    {{> "post-card"}}
+                {{/foreach}}
+            {{/if}}
+        {{/get}}
+
+    </div>
+</aside>
+
 {{/post}}
