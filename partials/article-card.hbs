@@ -22,32 +22,34 @@
             {{/if}}
 
             {{#if published_at}}
-                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMM YYYY"}}</time>
+                <time class="article-card__date" datetime="{{date format="YYYY-MM-DD"}}">- {{date format="DD MMM YYYY"}} -</time>
             {{/if}}
 
             {{#primary_author}}
-                <div class="author">
+                <div class="article-card__author">
                     <a href="{{url}}">by {{name}}</a>
-                    <span class="bio">{{bio}}</span>
                 </div>
             {{/primary_author}}
         </header>
 
         <div class="article-card__body">
             {{#if excerpt}}
-                <p class="article-card__exerpt">{{excerpt}}</p>
+                <p class="article-card__exerpt">{{excerpt characters="400"}}</p>
             {{/if}}
 
             <div class="article-card__info">
-                <div class="article-card__tags">Tagget with
-                    {{#foreach tags}}
-                        <p class="article-card__tag">{{name}}</p>
-                    {{/foreach}}
-                </div>
                 <a class="article-card__content-link button" href="{{url}}">
                     <span class="button__text">Read more</span>
-                    <span class="button__arrow">➡</span>
+                    {{!-- <span class="button__arrow">➡</span> --}}
                 </a>
+
+                {{#if tags}}
+                <div class="article-card__tags">Targget with:
+                    {{#foreach tags}}
+                        <a class="article-card__tag" href={{url}}>{{name}}</a>
+                    {{/foreach}}
+                </div>
+                {{/if}}
             </div>
         </div>
     </div>

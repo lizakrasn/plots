@@ -2,6 +2,8 @@
   width: 100%;
   display: grid;
   grid-template-columns: auto 1fr;
+  font-family: 'BasisGrotesquePro', "Arial", sans-serif;
+  font-size: 18px;
 
   &__image {
     width: 250px;
@@ -10,8 +12,36 @@
     border-radius: 2px;
   }
 
+  &__title {
+    font-size: 26px;
+    font-weight: bold;
+  }
+
   &__header {
+    margin-bottom: 10px;
     display: flex;
+    align-items: center;
+    // justify-content: space-between;
+  }
+
+  &__date {
+    margin-left: 20px;
+    font-weight: 700;
+    color: $chocolate;
+  }
+
+  &__author {
+    margin-left: 20px;
+
+    a {
+      text-decoration: none;
+      color: $dark-orange;
+      transition: color 300ms ease-out;
+
+      &:hover {
+        color: $orange;
+      }
+    }
   }
 
   &__content {
@@ -23,17 +53,39 @@
     flex-direction: column;
   }
 
+  &__exerpt {
+    font-size: 18px;
+    line-height: 120%;
+  }
+
   &__info {
     margin-top: 20px;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
   }
 
-  &__title {
-    padding-bottom: 20px;
-    font-size: 36px;
-    font-weight: bold;
+  &__tags {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: grey;
   }
 
+  &__tag {
+    margin-left: 7px;
+    padding: 0 5px;
+    background-color: rgba(189, 162, 157, 0.4);
+    border-radius: 10px;
+    font-weight: 400;
+    color: $main-color;
+    text-decoration: none;
+    transition: background-color 300ms ease-out;
 
+    &:hover {
+      background-color: $milk-chocolate;
+    }
+  }
 }
